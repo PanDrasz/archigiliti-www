@@ -10,7 +10,7 @@
 - [x] Polityka prywatności
 
 ## Kolejny etap
-- [ ] O nas
+- [x] O nas
 - [ ] Case studies
 - [ ] EN version
 - [ ] Blog / Insights
