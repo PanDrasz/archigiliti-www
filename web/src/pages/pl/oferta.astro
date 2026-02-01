@@ -94,7 +94,7 @@ const services = [
   <Section variant="light" class="pt-12 md:pt-16">
     <div class="text-center max-w-3xl mx-auto">
       <h1 class="mb-6">Czym możemy pomóc</h1>
-      <p class="text-xl text-neutral-mid">
+      <p class="text-xl text-neutral-mid dark:text-stone-400">
         Łączymy perspektywę architekta, CTO i praktyka. Każdy projekt zaczynamy od zrozumienia kontekstu i celów — nie od sprzedaży rozwiązania.
       </p>
     </div>
@@ -106,7 +106,7 @@ const services = [
         <div>
           <p class="text-sm font-medium text-primary mb-2 uppercase tracking-wider">{service.subtitle}</p>
           <h2 class="mb-4">{service.title}</h2>
-          <p class="text-lg text-neutral-mid mb-6">{service.description}</p>
+          <p class="text-lg text-neutral-mid dark:text-stone-400 mb-6">{service.description}</p>
           <a href="/pl/kontakt/" class="btn-primary">Porozmawiajmy</a>
         </div>
         <div>
@@ -116,7 +116,7 @@ const services = [
                 <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                <span class="text-neutral-mid">{detail}</span>
+                <span class="text-neutral-mid dark:text-stone-400">{detail}</span>
               </li>
             ))}
           </ul>
@@ -130,7 +130,7 @@ const services = [
     <p class="text-lg text-stone-400 mb-8 max-w-2xl mx-auto">
       Zaczynamy od rozmowy. Bez zobowiązań, bez pitchu sprzedażowego. Chcemy zrozumieć Twój kontekst i sprawdzić, czy możemy realnie pomóc.
     </p>
-    <a href="/pl/kontakt/" class="btn bg-white text-neutral-dark hover:bg-stone-100 text-lg px-8 py-4">
+    <a href="/pl/kontakt/" class="btn bg-white dark:bg-neutral-light text-neutral-dark hover:bg-stone-100 dark:hover:bg-stone-200 text-lg px-8 py-4">
       Umów bezpłatną konsultację
     </a>
   </Section>

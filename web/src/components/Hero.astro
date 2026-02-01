@@ -14,7 +14,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative py-20 md:py-32 lg:py-40 bg-neutral-light overflow-hidden">
+<section class="relative py-20 md:py-32 lg:py-40 bg-neutral-light dark:bg-neutral-dark overflow-hidden">
   <!-- Subtle background pattern -->
   <div class="absolute inset-0 opacity-[0.03]">
     <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -28,8 +28,8 @@ const {
   </div>
 
   <div class="container-narrow relative text-center">
-    <h1 class="mb-6 text-neutral-dark" set:html={title.replace(/\.\s*/g, '.<br/>')} />
-    <p class="text-xl md:text-2xl text-neutral-mid mb-10 max-w-2xl mx-auto leading-relaxed">
+    <h1 class="mb-6 text-neutral-dark dark:text-neutral-light" set:html={title.replace(/\.\s*/g, '.<br/>')} />
+    <p class="text-xl md:text-2xl text-neutral-mid dark:text-stone-400 mb-10 max-w-2xl mx-auto leading-relaxed">
       {subtitle}
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">

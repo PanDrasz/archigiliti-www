@@ -14,9 +14,9 @@ const {
 } = Astro.props;
 
 const bgClasses = {
-  default: 'bg-white',
-  light: 'bg-neutral-light',
-  dark: 'bg-neutral-dark text-white'
+  default: 'bg-white dark:bg-neutral-dark',
+  light: 'bg-neutral-light dark:bg-neutral-dark',
+  dark: 'bg-neutral-dark dark:bg-stone-900 text-white'
 };
 
 const containerClass = narrow ? 'container-narrow' : 'container-wide';
