@@ -1,0 +1,29 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  variant?: 'default' | 'light' | 'dark';
+  narrow?: boolean;
+}
+
+const {
+  id,
+  class: className = '',
+  variant = 'default',
+  narrow = false
+} = Astro.props;
+
+const bgClasses = {
+  default: 'bg-white',
+  light: 'bg-neutral-light',
+  dark: 'bg-neutral-dark text-white'
+};
+
+const containerClass = narrow ? 'container-narrow' : 'container-wide';
+---
+
+<section id={id} class:list={['section', bgClasses[variant], className]}>
+  <div class={containerClass}>
+    <slot />
+  </div>
+</section>

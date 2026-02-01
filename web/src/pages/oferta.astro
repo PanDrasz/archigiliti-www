@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+
+const services = [
+  {
+    id: 'architektura',
+    title: 'Architektura IT',
+    subtitle: 'Enterprise / Cloud / Hybrid',
+    description: 'Projektujemy architekturę systemów, które są skalowalne, bezpieczne i zrozumiałe dla zespołów.',
+    details: [
+      'Projektowanie architektury rozwiązań i systemów',
+      'Migracje do chmury i strategie multicloud',
+      'Architektura integracji i API',
+      'Modernizacja systemów legacy',
+      'Dokumentacja architektoniczna (C4, ADR)'
+    ]
+  },
+  {
+    id: 'ai',
+    title: 'AI & GenAI',
+    subtitle: 'RAG / LLM / Governance',
+    description: 'Pomagamy wdrażać AI w sposób odpowiedzialny: od koncepcji, przez architekturę, po governance.',
+    details: [
+      'Strategia i roadmapa AI dla organizacji',
+      'Architektura rozwiązań GenAI i RAG',
+      'Wybór modeli i platformy (OpenAI, Azure, AWS, on-prem)',
+      'AI Governance i polityki bezpieczeństwa',
+      'Proof of Concept i pilotaże'
+    ]
+  },
+  {
+    id: 'audyty',
+    title: 'Audyty technologiczne',
+    subtitle: 'Ocena / Rekomendacje / Roadmapa',
+    description: 'Oceniamy istniejące rozwiązania i wskazujemy realne kierunki poprawy.',
+    details: [
+      'Audyt architektury i kodu',
+      'Ocena dojrzałości technologicznej',
+      'Analiza ryzyk i technical debt',
+      'Due diligence technologiczne',
+      'Rekomendacje i plan działania'
+    ]
+  },
+  {
+    id: 'cto',
+    title: 'Wsparcie CTO',
+    subtitle: 'Architecture-as-a-Service',
+    description: 'Działamy jako partner decyzyjny w kluczowych momentach technologicznych.',
+    details: [
+      'Fractional CTO / Chief Architect',
+      'Wsparcie w decyzjach technologicznych',
+      'Budowanie zespołów i kompetencji',
+      'Rekrutacja i ocena kandydatów technicznych',
+      'Mentoring liderów technicznych'
+    ]
+  },
+  {
+    id: 'sdlc',
+    title: 'SDLC i Operating Model',
+    subtitle: 'Procesy / DevOps / AI-native',
+    description: 'Projektujemy procesy wytwórcze i modele operacyjne dopasowane do AI i nowoczesnych zespołów.',
+    details: [
+      'Projektowanie procesów wytwórczych',
+      'DevOps i Platform Engineering',
+      'Wdrażanie AI w SDLC (AI-assisted development)',
+      'Modele operacyjne dla zespołów produktowych',
+      'Metryki i continuous improvement'
+    ]
+  },
+  {
+    id: 'strategia',
+    title: 'Doradztwo strategiczne',
+    subtitle: 'Wizja / Decyzje / Transformacja',
+    description: 'Pomagamy podejmować decyzje technologiczne, które mają sens biznesowy.',
+    details: [
+      'Strategia technologiczna',
+      'Transformacja cyfrowa',
+      'Optymalizacja kosztów IT',
+      'Vendor selection i negocjacje',
+      'Budowanie business case dla inicjatyw IT'
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Oferta | Archigiliti"
+  description="Architektura IT, AI & GenAI, audyty technologiczne, wsparcie CTO. Doradztwo dla organizacji enterprise."
+>
+  <!-- Hero -->
+  <Section variant="light" class="pt-12 md:pt-16">
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="mb-6">Czym możemy pomóc</h1>
+      <p class="text-xl text-neutral-mid">
+        Łączymy perspektywę architekta, CTO i praktyka. Każdy projekt zaczynamy od zrozumienia kontekstu i celów — nie od sprzedaży rozwiązania.
+      </p>
+    </div>
+  </Section>
+
+  <!-- Services -->
+  {services.map((service, index) => (
+    <Section
+      id={service.id}
+      variant={index % 2 === 0 ? 'default' : 'light'}
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div>
+          <p class="text-sm font-medium text-primary mb-2 uppercase tracking-wider">
+            {service.subtitle}
+          </p>
+          <h2 class="mb-4">{service.title}</h2>
+          <p class="text-lg text-neutral-mid mb-6">
+            {service.description}
+          </p>
+          <a href="/kontakt" class="btn-primary">
+            Porozmawiajmy
+          </a>
+        </div>
+        <div>
+          <ul class="space-y-3">
+            {service.details.map((detail) => (
+              <li class="flex gap-3">
+                <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-neutral-mid">{detail}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Section>
+  ))}
+
+  <!-- How we work -->
+  <Section variant="dark" class="text-center">
+    <h2 class="text-white mb-4">Jak wygląda współpraca?</h2>
+    <p class="text-lg text-stone-400 mb-8 max-w-2xl mx-auto">
+      Zaczynamy od rozmowy. Bez zobowiązań, bez pitchu sprzedażowego. Chcemy zrozumieć Twój kontekst i sprawdzić, czy możemy realnie pomóc.
+    </p>
+    <a href="/kontakt" class="btn bg-white text-neutral-dark hover:bg-stone-100 text-lg px-8 py-4">
+      Umów bezpłatną konsultację
+    </a>
+  </Section>
+</BaseLayout>

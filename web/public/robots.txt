@@ -1,0 +1,6 @@
+# Archigiliti - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://archigiliti.com/sitemap-index.xml

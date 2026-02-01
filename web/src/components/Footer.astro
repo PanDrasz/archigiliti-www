@@ -1,0 +1,80 @@
+---
+const currentYear = new Date().getFullYear();
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/oferta', label: 'Oferta' },
+  { href: '/o-nas', label: 'O nas' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+---
+
+<footer class="bg-neutral-dark text-white">
+  <div class="container-wide py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <img
+          src="/images/logo.png"
+          alt="Archigiliti"
+          class="h-10 w-auto mb-4 brightness-0 invert"
+        />
+        <p class="text-sm text-stone-400 leading-relaxed">
+          Doradztwo IT i AI dla organizacji, które myślą długoterminowo.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-stone-300">
+          Nawigacja
+        </h4>
+        <ul class="space-y-2">
+          {navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-stone-400 hover:text-white transition-colors"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-stone-300">
+          Kontakt
+        </h4>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="mailto:piotr.andrasz@archigiliti.com"
+              class="text-sm text-stone-400 hover:text-white transition-colors"
+            >
+              piotr.andrasz@archigiliti.com
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 pt-8 border-t border-stone-700 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-stone-500">
+        &copy; {currentYear} Archigiliti. Wszelkie prawa zastrzeżone.
+      </p>
+      <div class="flex gap-6">
+        <a
+          href="/polityka-prywatnosci"
+          class="text-sm text-stone-500 hover:text-stone-300 transition-colors"
+        >
+          Polityka prywatności
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
