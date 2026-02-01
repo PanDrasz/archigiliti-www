@@ -1,11 +1,19 @@
 ---
+import { type Lang, useTranslations } from '../utils/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/oferta', label: 'Oferta' },
-  { href: '/o-nas', label: 'O nas' },
-  { href: '/kontakt', label: 'Kontakt' },
+  { href: `/${lang}/`, label: t('nav.home') },
+  { href: `/${lang}/oferta/`, label: t('nav.services') },
+  { href: `/${lang}/o-nas/`, label: t('nav.about') },
+  { href: `/${lang}/kontakt/`, label: t('nav.contact') },
 ];
 ---
 
@@ -21,14 +29,14 @@ const navItems = [
           class="h-10 w-auto mb-4 brightness-0 invert"
         />
         <p class="text-sm text-stone-400 leading-relaxed">
-          Doradztwo IT i AI dla organizacji, które myślą długoterminowo.
+          {t('footer.description')}
         </p>
       </div>
 
       <!-- Navigation -->
       <div>
         <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-stone-300">
-          Nawigacja
+          {t('footer.navigation')}
         </h4>
         <ul class="space-y-2">
           {navItems.map((item) => (
@@ -47,7 +55,7 @@ const navItems = [
       <!-- Contact -->
       <div>
         <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-stone-300">
-          Kontakt
+          {t('footer.contact')}
         </h4>
         <ul class="space-y-2">
           <li>
@@ -65,14 +73,14 @@ const navItems = [
     <!-- Bottom bar -->
     <div class="mt-12 pt-8 border-t border-stone-700 flex flex-col md:flex-row justify-between items-center gap-4">
       <p class="text-sm text-stone-500">
-        &copy; {currentYear} Archigiliti. Wszelkie prawa zastrzeżone.
+        &copy; {currentYear} Archigiliti. {t('footer.rights')}
       </p>
       <div class="flex gap-6">
         <a
-          href="/polityka-prywatnosci"
+          href={`/${lang}/polityka-prywatnosci/`}
           class="text-sm text-stone-500 hover:text-stone-300 transition-colors"
         >
-          Polityka prywatności
+          {t('footer.privacy')}
         </a>
       </div>
     </div>

@@ -7,10 +7,19 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      filter: (page) => !page.includes('/polityka-prywatnosci'),
+      filter: (page) =>
+        !page.includes('/polityka-prywatnosci') &&
+        page !== 'https://archigiliti.com/',
       changefreq: 'monthly',
       priority: 0.7,
-      lastmod: new Date()
+      lastmod: new Date(),
+      i18n: {
+        defaultLocale: 'pl',
+        locales: {
+          pl: 'pl',
+          en: 'en'
+        }
+      }
     })
   ],
   output: 'static',

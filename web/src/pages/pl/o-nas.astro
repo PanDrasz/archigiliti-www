@@ -1,13 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Section from '../components/Section.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const lang = 'pl';
 ---
 
 <BaseLayout
+  lang={lang}
   title="O nas | Archigiliti"
   description="Poznaj Archigiliti — doświadczenie enterprise, praktyczne podejście do AI, architektura dopasowana do organizacji."
 >
-  <!-- Hero -->
   <Section variant="light" class="pt-12 md:pt-16">
     <div class="text-center max-w-3xl mx-auto">
       <h1 class="mb-6">O nas</h1>
@@ -17,20 +19,13 @@ import Section from '../components/Section.astro';
     </div>
   </Section>
 
-  <!-- Kim jesteśmy -->
   <Section variant="default">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div>
-        <img
-          src="/images/piotr-andrasz.png"
-          alt="Piotr Andrasz — założyciel Archigiliti"
-          class="rounded-xl shadow-lg w-full max-w-md mx-auto"
-        />
+        <img src="/images/piotr-andrasz.png" alt="Piotr Andrasz — założyciel Archigiliti" class="rounded-xl shadow-lg w-full max-w-md mx-auto" />
       </div>
       <div>
-        <p class="text-sm font-medium text-primary mb-2 uppercase tracking-wider">
-          Założyciel
-        </p>
+        <p class="text-sm font-medium text-primary mb-2 uppercase tracking-wider">Założyciel</p>
         <h2 class="mb-4">Piotr Andrasz</h2>
         <p class="text-lg text-neutral-mid mb-6">
           Architekt IT z wieloletnim doświadczeniem w projektach enterprise. Pracowałem z bankami, ubezpieczycielami i dużymi organizacjami nad architekturą systemów, transformacjami chmurowymi i wdrożeniami AI.
@@ -38,28 +33,18 @@ import Section from '../components/Section.astro';
         <p class="text-neutral-mid mb-6">
           Założyłem Archigiliti, bo wierzę, że dobre decyzje technologiczne wymagają połączenia wiedzy technicznej z rozumieniem biznesu. Zbyt często widziałem projekty, które kończyły się chaosem — nie z powodu złej technologii, ale złych decyzji architektonicznych.
         </p>
-        <a
-          href="https://linkedin.com/in/piotrandrasz"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-medium transition-colors"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
+        <a href="https://www.linkedin.com/in/piotr-andrasz-90510813/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-medium transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
       </div>
     </div>
   </Section>
 
-  <!-- Doświadczenie -->
   <Section variant="light">
     <div class="text-center mb-12">
       <h2 class="mb-4">Doświadczenie</h2>
-      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">
-        Pracowałem w projektach, gdzie stawka była wysoka, a margines błędu mały.
-      </p>
+      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">Pracowałem w projektach, gdzie stawka była wysoka, a margines błędu mały.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="p-6 bg-white rounded-xl border border-stone-200 text-center">
@@ -81,77 +66,54 @@ import Section from '../components/Section.astro';
     </div>
   </Section>
 
-  <!-- Filozofia pracy -->
   <Section variant="default">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-center mb-12">Filozofia pracy</h2>
       <div class="space-y-8">
         <div class="flex gap-6">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
-            </svg>
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-2">Najpierw zrozumienie, potem rozwiązanie</h3>
-            <p class="text-neutral-mid">
-              Nie sprzedaję technologii. Zaczynam od zrozumienia problemu, kontekstu i ograniczeń. Dopiero potem proponuję rozwiązanie.
-            </p>
+            <p class="text-neutral-mid">Nie sprzedaję technologii. Zaczynam od zrozumienia problemu, kontekstu i ograniczeń. Dopiero potem proponuję rozwiązanie.</p>
           </div>
         </div>
-
         <div class="flex gap-6">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
-            </svg>
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-2">Prostota ponad złożoność</h3>
-            <p class="text-neutral-mid">
-              Najlepsza architektura to taka, którą zespół rozumie i potrafi utrzymać. Unikam overengineeringu i modnych buzzwordów.
-            </p>
+            <p class="text-neutral-mid">Najlepsza architektura to taka, którą zespół rozumie i potrafi utrzymać. Unikam overengineeringu i modnych buzzwordów.</p>
           </div>
         </div>
-
         <div class="flex gap-6">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
-            </svg>
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-2">Transfer wiedzy</h3>
-            <p class="text-neutral-mid">
-              Nie buduję zależności. Pracuję z zespołami klienta tak, żeby po zakończeniu projektu byli w stanie kontynuować samodzielnie.
-            </p>
+            <p class="text-neutral-mid">Nie buduję zależności. Pracuję z zespołami klienta tak, żeby po zakończeniu projektu byli w stanie kontynuować samodzielnie.</p>
           </div>
         </div>
-
         <div class="flex gap-6">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-2">Długoterminowe myślenie</h3>
-            <p class="text-neutral-mid">
-              Szybkie hacki tworzą technical debt. Projektuję rozwiązania, które będą działać za 3-5 lat, nie tylko na demo.
-            </p>
+            <p class="text-neutral-mid">Szybkie hacki tworzą technical debt. Projektuję rozwiązania, które będą działać za 3-5 lat, nie tylko na demo.</p>
           </div>
         </div>
       </div>
     </div>
   </Section>
 
-  <!-- Dla kogo pracujemy -->
   <Section variant="light">
     <div class="text-center mb-12">
       <h2 class="mb-4">Dla kogo pracujemy</h2>
-      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">
-        Najlepiej współpracuje mi się z organizacjami, które traktują technologię poważnie.
-      </p>
+      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">Najlepiej współpracuje mi się z organizacjami, które traktują technologię poważnie.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
       <div class="p-6 bg-white rounded-xl border border-stone-200">
@@ -187,14 +149,9 @@ import Section from '../components/Section.astro';
     </div>
   </Section>
 
-  <!-- CTA -->
   <Section variant="dark" class="text-center">
     <h2 class="text-white mb-4">Porozmawiajmy</h2>
-    <p class="text-lg text-stone-400 mb-8 max-w-xl mx-auto">
-      Masz projekt, który wymaga doświadczonego architekta? Chętnie poznam kontekst.
-    </p>
-    <a href="/kontakt" class="btn bg-white text-neutral-dark hover:bg-stone-100 text-lg px-8 py-4">
-      Umów rozmowę
-    </a>
+    <p class="text-lg text-stone-400 mb-8 max-w-xl mx-auto">Masz projekt, który wymaga doświadczonego architekta? Chętnie poznam kontekst.</p>
+    <a href="/pl/kontakt/" class="btn bg-white text-neutral-dark hover:bg-stone-100 text-lg px-8 py-4">Umów rozmowę</a>
   </Section>
 </BaseLayout>

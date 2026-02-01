@@ -12,7 +12,7 @@
 ## Kolejny etap
 - [x] O nas
 - [ ] Case studies
-- [ ] EN version
+- [x] EN version (i18n: /pl/, /en/ + auto-redirect)
 - [ ] Blog / Insights
 
 ## Nice to have

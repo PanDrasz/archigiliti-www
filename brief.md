@@ -56,5 +56,5 @@ Alternatywny:
 
 ## 9. Dane kontaktowe
 - **E-mail:** piotr.andrasz@archigiliti.com
-- **LinkedIn:** (do uzupełnienia)
+- **LinkedIn:** https://www.linkedin.com/in/piotr-andrasz-90510813/
 - **Telefon:** (opcjonalnie)

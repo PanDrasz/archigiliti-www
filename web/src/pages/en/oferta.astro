@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const lang = 'en';
+
+const services = [
+  {
+    id: 'architecture',
+    title: 'IT Architecture',
+    subtitle: 'Enterprise / Cloud / Hybrid',
+    description: 'We design system architectures that are scalable, secure, and understandable for teams.',
+    details: [
+      'Solution and system architecture design',
+      'Cloud migrations and multicloud strategies',
+      'Integration and API architecture',
+      'Legacy system modernization',
+      'Architecture documentation (C4, ADR)'
+    ]
+  },
+  {
+    id: 'ai',
+    title: 'AI & GenAI',
+    subtitle: 'RAG / LLM / Governance',
+    description: 'We help implement AI responsibly: from concept, through architecture, to governance.',
+    details: [
+      'AI strategy and roadmap for organizations',
+      'GenAI and RAG solution architecture',
+      'Model and platform selection (OpenAI, Azure, AWS, on-prem)',
+      'AI Governance and security policies',
+      'Proof of Concept and pilots'
+    ]
+  },
+  {
+    id: 'audits',
+    title: 'Technology Audits',
+    subtitle: 'Assessment / Recommendations / Roadmap',
+    description: 'We assess existing solutions and identify real improvement opportunities.',
+    details: [
+      'Architecture and code audit',
+      'Technology maturity assessment',
+      'Risk and technical debt analysis',
+      'Technology due diligence',
+      'Recommendations and action plan'
+    ]
+  },
+  {
+    id: 'cto',
+    title: 'CTO Support',
+    subtitle: 'Architecture-as-a-Service',
+    description: 'We act as a decision-making partner at critical technological moments.',
+    details: [
+      'Fractional CTO / Chief Architect',
+      'Technology decision support',
+      'Team and competency building',
+      'Technical candidate recruitment and assessment',
+      'Technical leader mentoring'
+    ]
+  },
+  {
+    id: 'sdlc',
+    title: 'SDLC & Operating Model',
+    subtitle: 'Processes / DevOps / AI-native',
+    description: 'We design development processes and operating models tailored for AI and modern teams.',
+    details: [
+      'Development process design',
+      'DevOps and Platform Engineering',
+      'AI in SDLC implementation (AI-assisted development)',
+      'Operating models for product teams',
+      'Metrics and continuous improvement'
+    ]
+  },
+  {
+    id: 'strategy',
+    title: 'Strategic Consulting',
+    subtitle: 'Vision / Decisions / Transformation',
+    description: 'We help make technology decisions that make business sense.',
+    details: [
+      'Technology strategy',
+      'Digital transformation',
+      'IT cost optimization',
+      'Vendor selection and negotiations',
+      'Building business cases for IT initiatives'
+    ]
+  }
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title="Services | Archigiliti"
+  description="IT Architecture, AI & GenAI, technology audits, CTO support. Consulting for enterprise organizations."
+>
+  <Section variant="light" class="pt-12 md:pt-16">
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="mb-6">How we can help</h1>
+      <p class="text-xl text-neutral-mid">
+        We combine the perspective of an architect, CTO, and practitioner. Every project starts with understanding context and goals — not selling a solution.
+      </p>
+    </div>
+  </Section>
+
+  {services.map((service, index) => (
+    <Section id={service.id} variant={index % 2 === 0 ? 'default' : 'light'}>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div>
+          <p class="text-sm font-medium text-primary mb-2 uppercase tracking-wider">{service.subtitle}</p>
+          <h2 class="mb-4">{service.title}</h2>
+          <p class="text-lg text-neutral-mid mb-6">{service.description}</p>
+          <a href="/en/contact/" class="btn-primary">Let's talk</a>
+        </div>
+        <div>
+          <ul class="space-y-3">
+            {service.details.map((detail) => (
+              <li class="flex gap-3">
+                <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-neutral-mid">{detail}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Section>
+  ))}
+
+  <Section variant="dark" class="text-center">
+    <h2 class="text-white mb-4">How does collaboration work?</h2>
+    <p class="text-lg text-stone-400 mb-8 max-w-2xl mx-auto">
+      We start with a conversation. No obligations, no sales pitch. We want to understand your context and check if we can actually help.
+    </p>
+    <a href="/en/contact/" class="btn bg-white text-neutral-dark hover:bg-stone-100 text-lg px-8 py-4">
+      Schedule a free consultation
+    </a>
+  </Section>
+</BaseLayout>

@@ -1,163 +1,27 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import Section from '../components/Section.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import ProcessStep from '../components/ProcessStep.astro';
-import ValueProp from '../components/ValueProp.astro';
-
-const services = [
-  {
-    icon: 'architecture',
-    title: 'Architektura IT',
-    description: 'Projektujemy architekturę systemów, które są skalowalne, bezpieczne i zrozumiałe dla zespołów.'
-  },
-  {
-    icon: 'ai',
-    title: 'AI & GenAI',
-    description: 'Pomagamy wdrażać AI w sposób odpowiedzialny: od koncepcji, przez architekturę, po governance.'
-  },
-  {
-    icon: 'audit',
-    title: 'Audyty',
-    description: 'Oceniamy istniejące rozwiązania i wskazujemy realne kierunki poprawy.'
-  },
-  {
-    icon: 'cto',
-    title: 'Wsparcie CTO',
-    description: 'Działamy jako partner decyzyjny w kluczowych momentach technologicznych.'
-  },
-  {
-    icon: 'sdlc',
-    title: 'SDLC i operating model',
-    description: 'Projektujemy procesy wytwórcze i modele operacyjne dopasowane do AI i nowoczesnych zespołów.'
-  },
-  {
-    icon: 'strategy',
-    title: 'Doradztwo strategiczne',
-    description: 'Pomagamy podejmować decyzje technologiczne, które mają sens biznesowy.'
-  }
-];
-
-const processSteps = [
-  {
-    title: 'Rozmowa',
-    description: 'Zaczynamy od zrozumienia kontekstu, celów i ograniczeń.'
-  },
-  {
-    title: 'Diagnoza',
-    description: 'Analizujemy stan obecny i identyfikujemy ryzyka.'
-  },
-  {
-    title: 'Rekomendacje',
-    description: 'Proponujemy konkretne kierunki działania z uzasadnieniem.'
-  },
-  {
-    title: 'Wsparcie',
-    description: 'Pomagamy w realizacji lub nadzorujemy wdrożenie.'
-  }
-];
-
-const valueProps = [
-  {
-    title: 'Doświadczenie enterprise',
-    description: 'Pracowaliśmy z bankami, ubezpieczycielami, dużymi organizacjami.'
-  },
-  {
-    title: 'Praktyczne podejście do AI',
-    description: 'Rozumiemy technologię, nie tylko buzzwordy.'
-  },
-  {
-    title: 'Architektura dopasowana',
-    description: 'Nie ma jednego rozwiązania dla wszystkich.'
-  },
-  {
-    title: 'Bezpieczeństwo od początku',
-    description: 'Governance i compliance to nie afterthought.'
-  },
-  {
-    title: 'Partnerstwo',
-    description: 'Działamy jako rozszerzenie Twojego zespołu, nie vendor.'
-  }
-];
+// Root page - redirects based on browser language
+// Primary redirect handled by .htaccess, this is JS fallback
 ---
 
-<BaseLayout
-  title="Archigiliti | Architecture | AI | Strategy"
-  description="Doradztwo IT i AI dla organizacji, które myślą długoterminowo. Architektura systemów, GenAI, audyty technologiczne."
->
-  <!-- Hero -->
-  <Hero
-    title="Porządek w architekturze. Sens w AI."
-    subtitle="Doradztwo IT i AI dla organizacji, które myślą długoterminowo."
-  />
-
-  <!-- Services -->
-  <Section id="uslugi" variant="default">
-    <div class="text-center mb-12 md:mb-16">
-      <h2 class="mb-4">Czym się zajmujemy</h2>
-      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">
-        Łączymy perspektywę architekta, CTO i praktyka. Pomagamy podejmować dobre decyzje technologiczne.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {services.map((service) => (
-        <ServiceCard
-          icon={service.icon}
-          title={service.title}
-          description={service.description}
-        />
-      ))}
-    </div>
-  </Section>
-
-  <!-- Why Us -->
-  <Section id="dlaczego-my" variant="light">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div>
-        <h2 class="mb-4">Dlaczego Archigiliti</h2>
-        <p class="text-lg text-neutral-mid mb-8">
-          Działamy na styku biznesu, architektury i technologii. Pomagamy klientom podejmować dobre decyzje techniczne, a nie tylko „wdrażać narzędzia".
-        </p>
-        <a href="/o-nas" class="btn-secondary">
-          Poznaj nas lepiej
-        </a>
-      </div>
-      <div class="space-y-6">
-        {valueProps.map((prop) => (
-          <ValueProp title={prop.title} description={prop.description} />
-        ))}
-      </div>
-    </div>
-  </Section>
-
-  <!-- Process -->
-  <Section id="jak-pracujemy" variant="default">
-    <div class="text-center mb-12 md:mb-16">
-      <h2 class="mb-4">Jak pracujemy</h2>
-      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">
-        Prosty, sprawdzony proces. Bez zbędnej biurokracji.
-      </p>
-    </div>
-    <div class="max-w-2xl mx-auto space-y-8">
-      {processSteps.map((step, index) => (
-        <ProcessStep
-          number={index + 1}
-          title={step.title}
-          description={step.description}
-        />
-      ))}
-    </div>
-  </Section>
-
-  <!-- CTA -->
-  <Section variant="dark" class="text-center">
-    <h2 class="text-white mb-4">Porozmawiajmy o Twoim projekcie</h2>
-    <p class="text-lg text-stone-400 mb-8 max-w-xl mx-auto">
-      Umów się na bezpłatną konsultację. Bez zobowiązań, bez sprzedażowego pitchu.
-    </p>
-    <a href="/kontakt" class="btn bg-white text-neutral-dark hover:bg-stone-100 text-lg px-8 py-4">
-      Umów konsultację
-    </a>
-  </Section>
-</BaseLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archigiliti | Redirecting...</title>
+    <link rel="alternate" hreflang="pl" href="https://archigiliti.com/pl/" />
+    <link rel="alternate" hreflang="en" href="https://archigiliti.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://archigiliti.com/pl/" />
+    <script>
+      (function() {
+        var lang = navigator.language || navigator.userLanguage;
+        var isPolish = lang.toLowerCase().startsWith('pl');
+        window.location.replace(isPolish ? '/pl/' : '/en/');
+      })();
+    </script>
+    <meta http-equiv="refresh" content="0;url=/pl/" />
+  </head>
+  <body>
+    <p>Redirecting... <a href="/pl/">Polski</a> | <a href="/en/">English</a></p>
+  </body>
+</html>

@@ -8,6 +8,17 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # ============================================
+# Language Detection (root only)
+# ============================================
+# Redirect root to /pl/ or /en/ based on Accept-Language
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{HTTP:Accept-Language} ^pl [NC]
+RewriteRule ^$ /pl/ [L,R=302]
+
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /en/ [L,R=302]
+
+# ============================================
 # Clean URLs (trailing slash for directories)
 # ============================================
 # Redirect /page to /page/ (consistent URLs)

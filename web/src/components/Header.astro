@@ -1,21 +1,37 @@
 ---
+import { type Lang, useTranslations, languages } from '../utils/i18n';
+
 interface Props {
+  lang: Lang;
   currentPath?: string;
 }
 
-const { currentPath = '/' } = Astro.props;
+const { lang, currentPath = '' } = Astro.props;
+const t = useTranslations(lang);
+const otherLang = lang === 'pl' ? 'en' : 'pl';
+
+// Get path without language prefix for language switcher
+const pathWithoutLang = currentPath.replace(/^\/(pl|en)/, '') || '/';
+const switchLangPath = `/${otherLang}${pathWithoutLang}`;
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/oferta', label: 'Oferta' },
-  { href: '/o-nas', label: 'O nas' },
-  { href: '/kontakt', label: 'Kontakt' },
+  { href: `/${lang}/`, label: t('nav.home') },
+  { href: `/${lang}/oferta/`, label: t('nav.services') },
+  { href: `/${lang}/o-nas/`, label: t('nav.about') },
+  { href: `/${lang}/kontakt/`, label: t('nav.contact') },
 ];
+
+// Check if current path matches nav item (handle trailing slashes)
+const isActive = (href: string) => {
+  const normalizedCurrent = currentPath.replace(/\/$/, '') || `/${lang}`;
+  const normalizedHref = href.replace(/\/$/, '');
+  return normalizedCurrent === normalizedHref;
+};
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-light">
   <nav class="container-wide flex items-center justify-between h-16 md:h-20">
-    <a href="/" class="flex items-center gap-3 group">
+    <a href={`/${lang}/`} class="flex items-center gap-3 group">
       <img
         src="/images/logo.png"
         alt="Archigiliti"
@@ -31,7 +47,7 @@ const navItems = [
             href={item.href}
             class:list={[
               'text-sm font-medium transition-colors',
-              currentPath === item.href
+              isActive(item.href)
                 ? 'text-primary'
                 : 'text-neutral-dark hover:text-primary'
             ]}
@@ -42,10 +58,19 @@ const navItems = [
       ))}
     </ul>
 
-    <!-- Desktop CTA -->
-    <a href="/kontakt" class="hidden md:inline-flex btn-primary text-sm">
-      Porozmawiajmy
-    </a>
+    <!-- Desktop: Language switcher + CTA -->
+    <div class="hidden md:flex items-center gap-4">
+      <a
+        href={switchLangPath}
+        class="text-sm text-neutral-mid hover:text-primary transition-colors"
+        title={languages[otherLang]}
+      >
+        {otherLang.toUpperCase()}
+      </a>
+      <a href={`/${lang}/kontakt/`} class="btn-primary text-sm">
+        {t('nav.cta')}
+      </a>
+    </div>
 
     <!-- Mobile menu button -->
     <button
@@ -84,7 +109,7 @@ const navItems = [
               href={item.href}
               class:list={[
                 'block py-2 text-base font-medium transition-colors',
-                currentPath === item.href
+                isActive(item.href)
                   ? 'text-primary'
                   : 'text-neutral-dark hover:text-primary'
               ]}
@@ -93,9 +118,15 @@ const navItems = [
             </a>
           </li>
         ))}
-        <li class="pt-2">
-          <a href="/kontakt" class="btn-primary w-full text-center">
-            Porozmawiajmy
+        <li class="pt-2 flex items-center justify-between">
+          <a href={`/${lang}/kontakt/`} class="btn-primary flex-1 text-center">
+            {t('nav.cta')}
+          </a>
+          <a
+            href={switchLangPath}
+            class="ml-4 px-4 py-3 text-sm font-medium text-neutral-mid hover:text-primary border border-stone-200 rounded-lg transition-colors"
+          >
+            {languages[otherLang]}
           </a>
         </li>
       </ul>

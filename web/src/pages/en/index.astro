@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Section from '../../components/Section.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import ProcessStep from '../../components/ProcessStep.astro';
+import ValueProp from '../../components/ValueProp.astro';
+
+const lang = 'en';
+
+const services = [
+  {
+    icon: 'architecture',
+    title: 'IT Architecture',
+    description: 'We design system architectures that are scalable, secure, and understandable for teams.'
+  },
+  {
+    icon: 'ai',
+    title: 'AI & GenAI',
+    description: 'We help implement AI responsibly: from concept, through architecture, to governance.'
+  },
+  {
+    icon: 'audit',
+    title: 'Technology Audits',
+    description: 'We assess existing solutions and identify real improvement opportunities.'
+  },
+  {
+    icon: 'cto',
+    title: 'CTO Support',
+    description: 'We act as a decision-making partner at critical technological moments.'
+  },
+  {
+    icon: 'sdlc',
+    title: 'SDLC & Operating Model',
+    description: 'We design development processes and operating models tailored for AI and modern teams.'
+  },
+  {
+    icon: 'strategy',
+    title: 'Strategic Consulting',
+    description: 'We help make technology decisions that make business sense.'
+  }
+];
+
+const processSteps = [
+  { title: 'Conversation', description: 'We start by understanding context, goals, and constraints.' },
+  { title: 'Diagnosis', description: 'We analyze the current state and identify risks.' },
+  { title: 'Recommendations', description: 'We propose concrete directions with justification.' },
+  { title: 'Support', description: 'We help with implementation or supervise the delivery.' }
+];
+
+const valueProps = [
+  { title: 'Enterprise experience', description: 'We\'ve worked with banks, insurers, and large organizations.' },
+  { title: 'Practical AI approach', description: 'We understand technology, not just buzzwords.' },
+  { title: 'Tailored architecture', description: 'There\'s no one-size-fits-all solution.' },
+  { title: 'Security from the start', description: 'Governance and compliance aren\'t an afterthought.' },
+  { title: 'Partnership', description: 'We work as an extension of your team, not a vendor.' }
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title="Archigiliti | Architecture | AI | Strategy"
+  description="IT and AI consulting for organizations that think long-term. System architecture, GenAI, technology audits."
+>
+  <Hero
+    title="Order in architecture. Sense in AI."
+    subtitle="IT and AI consulting for organizations that think long-term."
+    ctaText="Let's talk"
+    ctaHref="/en/contact/"
+  />
+
+  <Section id="services" variant="default">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="mb-4">What we do</h2>
+      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">
+        We combine the perspective of an architect, CTO, and practitioner. We help make good technology decisions.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((service) => (
+        <ServiceCard icon={service.icon} title={service.title} description={service.description} />
+      ))}
+    </div>
+  </Section>
+
+  <Section id="why-us" variant="light">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div>
+        <h2 class="mb-4">Why Archigiliti</h2>
+        <p class="text-lg text-neutral-mid mb-8">
+          We operate at the intersection of business, architecture, and technology. We help clients make good technical decisions, not just "implement tools."
+        </p>
+        <a href="/en/about/" class="btn-secondary">Learn more about us</a>
+      </div>
+      <div class="space-y-6">
+        {valueProps.map((prop) => (
+          <ValueProp title={prop.title} description={prop.description} />
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <Section id="process" variant="default">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="mb-4">How we work</h2>
+      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">
+        A simple, proven process. No unnecessary bureaucracy.
+      </p>
+    </div>
+    <div class="max-w-2xl mx-auto space-y-8">
+      {processSteps.map((step, index) => (
+        <ProcessStep number={index + 1} title={step.title} description={step.description} />
+      ))}
+    </div>
+  </Section>
+
+  <Section variant="dark" class="text-center">
+    <h2 class="text-white mb-4">Let's talk about your project</h2>
+    <p class="text-lg text-stone-400 mb-8 max-w-xl mx-auto">
+      Schedule a free consultation. No obligations, no sales pitch.
+    </p>
+    <a href="/en/contact/" class="btn bg-white text-neutral-dark hover:bg-stone-100 text-lg px-8 py-4">
+      Schedule consultation
+    </a>
+  </Section>
+</BaseLayout>

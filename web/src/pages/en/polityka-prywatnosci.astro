@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const lang = 'en';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Privacy Policy | Archigiliti"
+  description="Privacy policy for the Archigiliti website."
+>
+  <Section variant="light" class="pt-12 md:pt-16">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="mb-8">Privacy Policy</h1>
+      <div class="prose prose-stone max-w-none space-y-6">
+        <p class="text-lg text-neutral-mid">Last updated: February 2025</p>
+
+        <h2 class="text-xl font-semibold mt-8 mb-4">1. Data Controller</h2>
+        <p class="text-neutral-mid">The data controller is Archigiliti, based in Poland. Contact: <a href="mailto:piotr.andrasz@archigiliti.com" class="text-primary hover:underline">piotr.andrasz@archigiliti.com</a></p>
+
+        <h2 class="text-xl font-semibold mt-8 mb-4">2. Scope of Data Collection</h2>
+        <p class="text-neutral-mid">This website does not automatically collect any personal data. We do not use cookies for analytics or marketing purposes.</p>
+        <p class="text-neutral-mid">Personal data (name, email address) is processed only when the user voluntarily provides it through email contact.</p>
+
+        <h2 class="text-xl font-semibold mt-8 mb-4">3. Purpose of Processing</h2>
+        <p class="text-neutral-mid">Data provided by users is used solely for:</p>
+        <ul class="list-disc list-inside text-neutral-mid space-y-2 ml-4">
+          <li>Responding to inquiries</li>
+          <li>Business correspondence</li>
+          <li>Preparing cooperation proposals</li>
+        </ul>
+
+        <h2 class="text-xl font-semibold mt-8 mb-4">4. User Rights</h2>
+        <p class="text-neutral-mid">Under GDPR, users have the right to:</p>
+        <ul class="list-disc list-inside text-neutral-mid space-y-2 ml-4">
+          <li>Access their data</li>
+          <li>Rectify data</li>
+          <li>Erase data</li>
+          <li>Restrict processing</li>
+          <li>Data portability</li>
+          <li>Object to processing</li>
+        </ul>
+
+        <h2 class="text-xl font-semibold mt-8 mb-4">5. Contact</h2>
+        <p class="text-neutral-mid">For data protection inquiries, please contact: <a href="mailto:piotr.andrasz@archigiliti.com" class="text-primary hover:underline">piotr.andrasz@archigiliti.com</a></p>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

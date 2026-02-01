@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const lang = 'en';
+---
+
+<BaseLayout
+  lang={lang}
+  title="About | Archigiliti"
+  description="Meet Archigiliti — enterprise experience, practical AI approach, architecture tailored to organizations."
+>
+  <Section variant="light" class="pt-12 md:pt-16">
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="mb-6">About us</h1>
+      <p class="text-xl text-neutral-mid">
+        We combine the perspective of an architect, CTO, and practitioner. We help make good technology decisions in complex organizations.
+      </p>
+    </div>
+  </Section>
+
+  <Section variant="default">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div>
+        <img src="/images/piotr-andrasz.png" alt="Piotr Andrasz — Archigiliti founder" class="rounded-xl shadow-lg w-full max-w-md mx-auto" />
+      </div>
+      <div>
+        <p class="text-sm font-medium text-primary mb-2 uppercase tracking-wider">Founder</p>
+        <h2 class="mb-4">Piotr Andrasz</h2>
+        <p class="text-lg text-neutral-mid mb-6">
+          IT Architect with years of experience in enterprise projects. I've worked with banks, insurers, and large organizations on system architecture, cloud transformations, and AI implementations.
+        </p>
+        <p class="text-neutral-mid mb-6">
+          I founded Archigiliti because I believe good technology decisions require combining technical knowledge with business understanding. Too often I've seen projects end in chaos — not because of bad technology, but bad architectural decisions.
+        </p>
+        <a href="https://www.linkedin.com/in/piotr-andrasz-90510813/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-medium transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </Section>
+
+  <Section variant="light">
+    <div class="text-center mb-12">
+      <h2 class="mb-4">Experience</h2>
+      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">I've worked on projects where stakes were high and margin for error was small.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-6 bg-white rounded-xl border border-stone-200 text-center">
+        <p class="text-4xl font-bold text-primary mb-2">15+</p>
+        <p class="text-neutral-mid">years in IT</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl border border-stone-200 text-center">
+        <p class="text-4xl font-bold text-primary mb-2">50+</p>
+        <p class="text-neutral-mid">enterprise projects</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl border border-stone-200 text-center">
+        <p class="text-4xl font-bold text-primary mb-2">10+</p>
+        <p class="text-neutral-mid">AI/GenAI implementations</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl border border-stone-200 text-center">
+        <p class="text-4xl font-bold text-primary mb-2">3</p>
+        <p class="text-neutral-mid">countries</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section variant="default">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-center mb-12">Work philosophy</h2>
+      <div class="space-y-8">
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Understanding first, solution second</h3>
+            <p class="text-neutral-mid">I don't sell technology. I start by understanding the problem, context, and constraints. Only then do I propose a solution.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Simplicity over complexity</h3>
+            <p class="text-neutral-mid">The best architecture is one the team understands and can maintain. I avoid overengineering and trendy buzzwords.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Knowledge transfer</h3>
+            <p class="text-neutral-mid">I don't build dependencies. I work with client teams so they can continue independently after the project ends.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Long-term thinking</h3>
+            <p class="text-neutral-mid">Quick hacks create technical debt. I design solutions that will work in 3-5 years, not just for the demo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section variant="light">
+    <div class="text-center mb-12">
+      <h2 class="mb-4">Who we work with</h2>
+      <p class="text-lg text-neutral-mid max-w-2xl mx-auto">I work best with organizations that take technology seriously.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div class="p-6 bg-white rounded-xl border border-stone-200">
+        <h3 class="font-semibold mb-3">Industries</h3>
+        <ul class="space-y-2 text-neutral-mid text-sm">
+          <li>Banking and finance</li>
+          <li>Insurance</li>
+          <li>Energy</li>
+          <li>Telecommunications</li>
+          <li>Enterprise SaaS</li>
+        </ul>
+      </div>
+      <div class="p-6 bg-white rounded-xl border border-stone-200">
+        <h3 class="font-semibold mb-3">Roles</h3>
+        <ul class="space-y-2 text-neutral-mid text-sm">
+          <li>CTO / CIO</li>
+          <li>Head of Architecture</li>
+          <li>Head of Engineering</li>
+          <li>VP of Technology</li>
+          <li>Product Directors</li>
+        </ul>
+      </div>
+      <div class="p-6 bg-white rounded-xl border border-stone-200">
+        <h3 class="font-semibold mb-3">Situations</h3>
+        <ul class="space-y-2 text-neutral-mid text-sm">
+          <li>New strategic project</li>
+          <li>AI / GenAI implementation</li>
+          <li>Legacy modernization</li>
+          <li>Technology due diligence</li>
+          <li>Team building</li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section variant="dark" class="text-center">
+    <h2 class="text-white mb-4">Let's talk</h2>
+    <p class="text-lg text-stone-400 mb-8 max-w-xl mx-auto">Have a project that needs an experienced architect? I'd love to learn more about your context.</p>
+    <a href="/en/kontakt/" class="btn bg-white text-neutral-dark hover:bg-stone-100 text-lg px-8 py-4">Schedule a call</a>
+  </Section>
+</BaseLayout>

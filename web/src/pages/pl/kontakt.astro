@@ -1,52 +1,35 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Section from '../components/Section.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const lang = 'pl';
 ---
 
 <BaseLayout
+  lang={lang}
   title="Kontakt | Archigiliti"
   description="Porozmawiajmy o Twoim projekcie. Architektura IT, AI, doradztwo technologiczne."
 >
-  <!-- Hero -->
   <Section variant="light" class="pt-12 md:pt-16">
     <div class="text-center max-w-3xl mx-auto">
       <h1 class="mb-6">Porozmawiajmy</h1>
-      <p class="text-xl text-neutral-mid">
-        Masz pytanie? Chcesz omówić projekt? Napisz — odpowiadam osobiście.
-      </p>
+      <p class="text-xl text-neutral-mid">Masz pytanie? Chcesz omówić projekt? Napisz — odpowiadam osobiście.</p>
     </div>
   </Section>
 
-  <!-- Contact options -->
   <Section variant="default">
     <div class="max-w-2xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <!-- Email -->
-        <a
-          href="mailto:piotr.andrasz@archigiliti.com"
-          class="group p-8 bg-neutral-light rounded-xl border border-stone-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300 text-center"
-        >
+        <a href="mailto:piotr.andrasz@archigiliti.com" class="group p-8 bg-neutral-light rounded-xl border border-stone-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300 text-center">
           <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
-            </svg>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
           </div>
           <h3 class="text-lg font-semibold text-neutral-dark mb-2">E-mail</h3>
           <p class="text-primary font-medium">piotr.andrasz@archigiliti.com</p>
         </a>
-
-        <!-- LinkedIn placeholder -->
-        <a
-          href="https://linkedin.com/in/piotrandrasz"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group p-8 bg-neutral-light rounded-xl border border-stone-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300 text-center"
-        >
+        <a href="https://www.linkedin.com/in/piotr-andrasz-90510813/" target="_blank" rel="noopener noreferrer" class="group p-8 bg-neutral-light rounded-xl border border-stone-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300 text-center">
           <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </div>
           <h3 class="text-lg font-semibold text-neutral-dark mb-2">LinkedIn</h3>
           <p class="text-primary font-medium">Piotr Andrasz</p>
@@ -55,29 +38,22 @@ import Section from '../components/Section.astro';
     </div>
   </Section>
 
-  <!-- What happens next -->
   <Section variant="light">
     <div class="max-w-2xl mx-auto text-center">
       <h2 class="mb-8">Co dalej?</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-primary text-white flex items-center justify-center font-semibold">
-            1
-          </div>
+          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-primary text-white flex items-center justify-center font-semibold">1</div>
           <h3 class="text-base font-semibold mb-2">Napisz do mnie</h3>
           <p class="text-sm text-neutral-mid">Opisz krótko swój kontekst i czego szukasz.</p>
         </div>
         <div>
-          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-primary text-white flex items-center justify-center font-semibold">
-            2
-          </div>
+          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-primary text-white flex items-center justify-center font-semibold">2</div>
           <h3 class="text-base font-semibold mb-2">Umówimy rozmowę</h3>
           <p class="text-sm text-neutral-mid">30-45 minut, bez zobowiązań. Zrozumiem Twoje potrzeby.</p>
         </div>
         <div>
-          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-primary text-white flex items-center justify-center font-semibold">
-            3
-          </div>
+          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-primary text-white flex items-center justify-center font-semibold">3</div>
           <h3 class="text-base font-semibold mb-2">Propozycja</h3>
           <p class="text-sm text-neutral-mid">Jeśli mogę pomóc — przedstawię konkretny plan działania.</p>
         </div>
@@ -85,7 +61,6 @@ import Section from '../components/Section.astro';
     </div>
   </Section>
 
-  <!-- FAQ -->
   <Section variant="default">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-center mb-12">Często zadawane pytania</h2>

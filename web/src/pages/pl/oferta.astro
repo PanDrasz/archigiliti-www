@@ -1,6 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Section from '../components/Section.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const lang = 'pl';
 
 const services = [
   {
@@ -85,10 +87,10 @@ const services = [
 ---
 
 <BaseLayout
+  lang={lang}
   title="Oferta | Archigiliti"
   description="Architektura IT, AI & GenAI, audyty technologiczne, wsparcie CTO. Doradztwo dla organizacji enterprise."
 >
-  <!-- Hero -->
   <Section variant="light" class="pt-12 md:pt-16">
     <div class="text-center max-w-3xl mx-auto">
       <h1 class="mb-6">Czym możemy pomóc</h1>
@@ -98,24 +100,14 @@ const services = [
     </div>
   </Section>
 
-  <!-- Services -->
   {services.map((service, index) => (
-    <Section
-      id={service.id}
-      variant={index % 2 === 0 ? 'default' : 'light'}
-    >
+    <Section id={service.id} variant={index % 2 === 0 ? 'default' : 'light'}>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
         <div>
-          <p class="text-sm font-medium text-primary mb-2 uppercase tracking-wider">
-            {service.subtitle}
-          </p>
+          <p class="text-sm font-medium text-primary mb-2 uppercase tracking-wider">{service.subtitle}</p>
           <h2 class="mb-4">{service.title}</h2>
-          <p class="text-lg text-neutral-mid mb-6">
-            {service.description}
-          </p>
-          <a href="/kontakt" class="btn-primary">
-            Porozmawiajmy
-          </a>
+          <p class="text-lg text-neutral-mid mb-6">{service.description}</p>
+          <a href="/pl/kontakt/" class="btn-primary">Porozmawiajmy</a>
         </div>
         <div>
           <ul class="space-y-3">
@@ -133,13 +125,12 @@ const services = [
     </Section>
   ))}
 
-  <!-- How we work -->
   <Section variant="dark" class="text-center">
     <h2 class="text-white mb-4">Jak wygląda współpraca?</h2>
     <p class="text-lg text-stone-400 mb-8 max-w-2xl mx-auto">
       Zaczynamy od rozmowy. Bez zobowiązań, bez pitchu sprzedażowego. Chcemy zrozumieć Twój kontekst i sprawdzić, czy możemy realnie pomóc.
     </p>
-    <a href="/kontakt" class="btn bg-white text-neutral-dark hover:bg-stone-100 text-lg px-8 py-4">
+    <a href="/pl/kontakt/" class="btn bg-white text-neutral-dark hover:bg-stone-100 text-lg px-8 py-4">
       Umów bezpłatną konsultację
     </a>
   </Section>
