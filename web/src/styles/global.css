@@ -11,6 +11,22 @@
     scroll-behavior: smooth;
   }
 
+  /* Respect user's reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   body {
     @apply bg-neutral-light text-neutral-dark font-sans;
     @apply dark:bg-neutral-dark dark:text-neutral-light;
@@ -41,6 +57,17 @@
   a {
     @apply transition-colors duration-200;
   }
+
+  /* Focus states for keyboard navigation */
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-white;
+    @apply dark:ring-offset-neutral-dark;
+  }
 }
 
 @layer components {
@@ -65,7 +92,21 @@
     @apply dark:border-neutral-light dark:text-neutral-light dark:hover:bg-neutral-light dark:hover:text-neutral-dark;
   }
 
+  .btn-tertiary {
+    @apply btn bg-white text-neutral-dark hover:bg-stone-100;
+    @apply dark:bg-neutral-light dark:hover:bg-stone-200;
+  }
+
   .section {
     @apply py-16 md:py-24;
+  }
+
+  /* Details/Summary styling for FAQ sections */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details summary::marker {
+    display: none;
   }
 }

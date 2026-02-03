@@ -92,6 +92,8 @@ const isActive = (href: string) => {
       type="button"
       class="md:hidden p-2 -mr-2 text-neutral-dark dark:text-neutral-light"
       aria-label="Menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
       data-menu-toggle
     >
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +117,7 @@ const isActive = (href: string) => {
   </nav>
 
   <!-- Mobile menu -->
-  <div class="md:hidden hidden" data-mobile-menu>
+  <div id="mobile-menu" class="md:hidden hidden" data-mobile-menu>
     <div class="container-wide py-4 border-t border-neutral-light dark:border-stone-800 bg-white dark:bg-neutral-dark">
       <ul class="flex flex-col gap-4">
         {navItems.map((item) => (
@@ -177,6 +179,7 @@ const isActive = (href: string) => {
     mobileMenu?.classList.toggle('hidden', isOpen);
     iconOpen?.classList.toggle('hidden', !isOpen);
     iconClose?.classList.toggle('hidden', isOpen);
+    menuToggle?.setAttribute('aria-expanded', (!isOpen).toString());
   });
 
   // Theme toggle

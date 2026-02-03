@@ -85,9 +85,17 @@ const enUrl = new URL(`/en${pathWithoutLang}`, Astro.site);
     })} />
   </head>
   <body class="flex flex-col min-h-screen">
+    <!-- Skip link for keyboard navigation -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-medium"
+    >
+      {lang === 'pl' ? 'Przejdź do treści' : 'Skip to content'}
+    </a>
+
     <Header lang={lang} currentPath={Astro.url.pathname} />
 
-    <main class="flex-1 pt-16 md:pt-20">
+    <main id="main-content" class="flex-1 pt-16 md:pt-20">
       <slot />
     </main>
 

@@ -19,7 +19,7 @@ const icons: Record<string, string> = {
 const iconPath = icon && icons[icon] ? icons[icon] : icons.architecture;
 ---
 
-<div class="group p-6 md:p-8 bg-white dark:bg-surface-dark rounded-xl border border-stone-200 dark:border-stone-700 hover:border-primary/30 dark:hover:border-primary/50 hover:shadow-lg transition-all duration-300">
+<div class="group p-6 md:p-8 bg-white dark:bg-surface-dark rounded-xl border border-stone-200 dark:border-stone-700 hover:border-primary/30 dark:hover:border-primary/50 hover:shadow-lg transition-all duration-300 cursor-pointer">
   <div class="w-12 h-12 mb-5 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={iconPath} />
   </div>
