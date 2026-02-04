@@ -33,9 +33,14 @@ const isActive = (href: string) => {
   <nav class="container-wide flex items-center justify-between h-16 md:h-20">
     <a href={`/${lang}/`} class="flex items-center gap-3 group">
       <img
-        src="/images/logo.png"
+        src="/images/logo_light_transparent.png"
         alt="Archigiliti"
-        class="h-10 md:h-12 w-auto"
+        class="h-[120px] md:h-36 w-auto dark:hidden"
+      />
+      <img
+        src="/images/logo_dark_transparent.png"
+        alt="Archigiliti"
+        class="h-[120px] md:h-36 w-auto hidden dark:block"
       />
     </a>
 
